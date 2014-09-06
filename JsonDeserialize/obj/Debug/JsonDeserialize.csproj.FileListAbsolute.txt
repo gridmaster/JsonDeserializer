@@ -1,0 +1,8 @@
+C:\Projects\JsonDeserialize\JsonDeserialize\bin\Debug\JsonDeserialize.exe.config
+C:\Projects\JsonDeserialize\JsonDeserialize\bin\Debug\JsonDeserialize.exe
+C:\Projects\JsonDeserialize\JsonDeserialize\bin\Debug\JsonDeserialize.pdb
+C:\Projects\JsonDeserialize\JsonDeserialize\obj\Debug\JsonDeserialize.exe
+C:\Projects\JsonDeserialize\JsonDeserialize\obj\Debug\JsonDeserialize.pdb
+C:\Projects\JsonDeserialize\JsonDeserialize\obj\Debug\JsonDeserialize.csprojResolveAssemblyReference.cache
+C:\Projects\JsonDeserialize\JsonDeserialize\bin\Debug\Newtonsoft.Json.dll
+C:\Projects\JsonDeserialize\JsonDeserialize\bin\Debug\Newtonsoft.Json.xml
