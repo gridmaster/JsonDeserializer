@@ -1,11 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.IO;
 using System.Net;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading;
 using System.Xml;
+using JsonDeserialize.Models;
 using Newtonsoft.Json;
 
 namespace JsonDeserialize
@@ -17,72 +14,32 @@ namespace JsonDeserialize
        
         public static string GetResponse(string sUri)
         {
-            var httpWRequest = (HttpWebRequest)WebRequest.Create(sUri);
-
-            try
+            using (WebClient wc = new WebClient())
             {
-                httpWRequest.KeepAlive = true;
-                httpWRequest.ProtocolVersion = HttpVersion.Version10;
+                string webData = string.Empty;
 
-                var httpWebResponse = (HttpWebResponse)httpWRequest.GetResponse();
-                var responseStream = httpWebResponse.GetResponseStream();
-
-                if (responseStream != null)
+                string error = string.Empty;
+                do
                 {
-                    using (StreamReader reader = new StreamReader(responseStream, Encoding.UTF8))
+                    error = string.Empty;
+                    try
                     {
-                        return reader.ReadToEnd();
+                        webData = wc.DownloadString(sUri);
+                        return webData;
                     }
-                }
-            }
-            catch (Exception ex)
-            {
-                return "WebWorks.GetResponse ERROR: " + ex.Message;
+                    catch (Exception ex)
+                    {
+                        if (ex.Message.IndexOf("The remote server returned an error: (502) Bad Gateway", System.StringComparison.Ordinal) > -1)
+                            error = ex.Message;
+                        else
+                            error = ex.Message;
+
+                      //  Log.WriteLog(string.Format("Error for Symbol {0}. Name {1} Error: {2}", sd.Symbol, sd.Name, ex.Message));
+                    }
+                } while (!string.IsNullOrEmpty(error));
             }
 
             return "";
-        }
-
-        public class BaseSectors
-        {
-            [JsonProperty(PropertyName = "sector")]
-            public List<Sectors> Sectors { get; set; }
-        }
-
-        public class BaseIndustries
-        {
-            [JsonProperty(PropertyName = "industry")]
-            public List<Industry> Industries { get; set; }
-        }
-
-        public class Sectors
-        {
-            [JsonProperty(PropertyName = "name")]
-            public string Name { get; set; }
-
-            [JsonProperty(PropertyName = "industry")]
-            public List<Industry> Industries { get; set; } 
-        }
-
-        public class Industry
-        {
-            [JsonProperty(PropertyName = "id")]
-            public string Id { get; set; }
-
-            [JsonProperty(PropertyName = "name")]
-            public string Name { get; set; }
-
-            [JsonProperty(PropertyName = "company")]
-            public List<Company> Companies { get; set; } 
-        }
-
-        public class Company
-        {
-            [JsonProperty(PropertyName = "name")]
-            public string Name { get; set; }
-
-            [JsonProperty(PropertyName = "symbol")]
-            public string Symbol { get; set; }
         }
 
         static BaseSectors GetSectorsIndustires()
@@ -134,16 +91,11 @@ namespace JsonDeserialize
 
         private static string GetJson(string url)
         {
-            int i = 0;
             string json = string.Empty;
             do
             {
                 json = GetResponse(url);
-                Thread.Sleep(2500);
-                i++;
             } while (json == "WebWorks.GetResponse ERROR: Unable to connect to the remote server");
-
-            Console.WriteLine("i = " + i);
 
             XmlDocument doc = new XmlDocument();
             doc.LoadXml(json);
@@ -160,20 +112,45 @@ namespace JsonDeserialize
 
         static void Main(string[] args)
         {
+            Console.WriteLine("{0}: Start", DateTime.Now);
             BaseSectors bs = GetSectorsIndustires();
 
             BaseIndustries bi = GetIndustiresCompanies();
+            SymbolDetails sdList = new SymbolDetails();
+
+            Console.WriteLine("{0}: Web data pulled", DateTime.Now);
+
+            int sectorId = 0;
 
             foreach (Sectors s in bs.Sectors)
             {
+                sectorId++;
                 foreach (Industry i in s.Industries)
                 {
                     var wtf = bi.Industries.Find(ind => ind.Id == i.Id);
                     if (wtf == null) continue;
-                    
+
+                    if (wtf.Companies == null) continue;
+
                     i.Companies = wtf.Companies;
+
+                    foreach (Company c in i.Companies)
+                    {
+
+                        SymbolDetail sd = new SymbolDetail();
+                        sd.SectorId = sectorId;
+                        sd.Sector = s.Name;
+                        sd.Industry = i.Name;
+                        sd.IndustryId = System.Convert.ToInt32(i.Id);
+                        sd.Symbol = c.Symbol;
+                        sd.Name = c.Name;
+                        sd.Date = DateTime.Now;
+                        sdList.Add(sd);
+                    }
                 }
             }
+
+            Console.WriteLine("{0}: Symbol Detail loaded", DateTime.Now);
 
             string json = JsonConvert.SerializeObject(bs);
 

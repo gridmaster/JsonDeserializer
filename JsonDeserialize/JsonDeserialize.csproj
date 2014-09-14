@@ -44,6 +44,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\BaseIndustries.cs" />
+    <Compile Include="Models\BaseSectors.cs" />
+    <Compile Include="Models\Company.cs" />
+    <Compile Include="Models\Industry.cs" />
+    <Compile Include="Models\Sectors.cs" />
+    <Compile Include="Models\SymbolDetail.cs" />
+    <Compile Include="Models\SymbolDetails.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
