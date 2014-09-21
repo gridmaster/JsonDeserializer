@@ -6,3 +6,7 @@ C:\Projects\JsonDeserialize\JsonDeserialize\obj\Debug\JsonDeserialize.pdb
 C:\Projects\JsonDeserialize\JsonDeserialize\obj\Debug\JsonDeserialize.csprojResolveAssemblyReference.cache
 C:\Projects\JsonDeserialize\JsonDeserialize\bin\Debug\Newtonsoft.Json.dll
 C:\Projects\JsonDeserialize\JsonDeserialize\bin\Debug\Newtonsoft.Json.xml
+C:\Projects\JsonDeserialize\JsonDeserialize\bin\Debug\EntityFramework.dll
+C:\Projects\JsonDeserialize\JsonDeserialize\bin\Debug\EntityFramework.SqlServer.dll
+C:\Projects\JsonDeserialize\JsonDeserialize\bin\Debug\EntityFramework.xml
+C:\Projects\JsonDeserialize\JsonDeserialize\bin\Debug\EntityFramework.SqlServer.xml

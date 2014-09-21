@@ -1,7 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.IO;
 using System.Net;
 using System.Text.RegularExpressions;
 using System.Xml;
+using JsonDeserialize.Core;
 using JsonDeserialize.Models;
 using Newtonsoft.Json;
 
@@ -34,7 +37,7 @@ namespace JsonDeserialize
                         else
                             error = ex.Message;
 
-                      //  Log.WriteLog(string.Format("Error for Symbol {0}. Name {1} Error: {2}", sd.Symbol, sd.Name, ex.Message));
+                        Log.WriteLog(string.Format("Error for Uri {0}.Error: {1}", sUri, error));
                     }
                 } while (!string.IsNullOrEmpty(error));
             }
@@ -110,19 +113,12 @@ namespace JsonDeserialize
             return newjson.Replace("@", "");
         }
 
-        static void Main(string[] args)
+        private static SymbolDetails LoadSymbols(BaseSectors bs, BaseIndustries bi)
         {
-            Console.WriteLine("{0}: Start", DateTime.Now);
-            BaseSectors bs = GetSectorsIndustires();
-
-            BaseIndustries bi = GetIndustiresCompanies();
             SymbolDetails sdList = new SymbolDetails();
-
-            Console.WriteLine("{0}: Web data pulled", DateTime.Now);
-
             int sectorId = 0;
 
-            foreach (Sectors s in bs.Sectors)
+            foreach (Sector s in bs.Sectors)
             {
                 sectorId++;
                 foreach (Industry i in s.Industries)
@@ -136,7 +132,6 @@ namespace JsonDeserialize
 
                     foreach (Company c in i.Companies)
                     {
-
                         SymbolDetail sd = new SymbolDetail();
                         sd.SectorId = sectorId;
                         sd.Sector = s.Name;
@@ -149,10 +144,47 @@ namespace JsonDeserialize
                     }
                 }
             }
+            return sdList;
+        }
 
-            Console.WriteLine("{0}: Symbol Detail loaded", DateTime.Now);
+        static void Main(string[] args)
+        {
+            Log.WriteLog(string.Format("{0}: Start", DateTime.Now));
+            /*
+            BaseSectors bs = GetSectorsIndustires();
+            BaseIndustries bi = GetIndustiresCompanies();
+
+            Log.WriteLog(string.Format("{0}: Web data pulled", DateTime.Now));
+
+            SymbolDetails sdList = LoadSymbols(bs, bi);
+
+            Log.WriteLog(string.Format("{0}: Symbol Detail loaded", DateTime.Now));
 
             string json = JsonConvert.SerializeObject(bs);
+            */
+            string myText = "{\"ETFReturns\":[{\"IntradayReturn\":null,\"ThreeMoReturn\":null,\"YTDReturn\":null,\"OneYrReturn\":null,\"ThreeYrReturn\":null,\"FiveYrReturn\":null,\"Id\":0,\"Date\":\"0001-01-01\",\"EtfName\":\"UBS E-TRACS CMCI Silver TR ETN\",\"Ticker\":\"USV\",\"Category\":\"Commodities Precious Metals\",\"FundFamily\":\"UBS AG\"},{\"IntradayReturn\":null,\"ThreeMoReturn\":null,\"YTDReturn\":null,\"OneYrReturn\":null,\"ThreeYrReturn\":null,\"FiveYrReturn\":null,\"Id\":0,\"Date\":\"0001-01-01\",\"EtfName\":\"Huntington US Equity Rotation Strat ETF\",\"Ticker\":\"HUSE\",\"Category\":\"Large Growth\",\"FundFamily\":\"Huntington Strategy Shares\"},{\"IntradayReturn\":null,\"ThreeMoReturn\":null,\"YTDReturn\":null,\"OneYrReturn\":null,\"ThreeYrReturn\":null,\"FiveYrReturn\":null,\"Id\":0,\"Date\":\"0001-01-01\",\"EtfName\":\"iShares MSCI Netherlands\",\"Ticker\":\"EWN\",\"Category\":\"Miscellaneous Region\",\"FundFamily\":\"iShares\"}]}";
+            using (StreamReader sr = new StreamReader(@"C:\Projects\JsonDeserialize\JsonDeserialize\crapToo.txt"))
+            {
+                myText = sr.ReadToEnd();
+            }
+           // myText = myText.Replace("\r", "").Replace("\t", "").Replace("\n", "");
+
+            myText = "[{\"EtfName\":\"UBS E-TRACS CMCI Silver TR ETN\",\"Ticker\":\"USV\",\"Category\":\"Commodities Precious Metals\",\"FundFamily\":\"UBS AG\"},"
+                + "{\"EtfName\":\"Huntington US Equity Rotation Strat ETF\",\"Ticker\":\"HUSE\",\"Category\":\"Large Growth\",\"FundFamily\":\"Huntington Strategy Shares\"}]";
+
+            var json = GetResponse("http://tickersymbol.info/GetETFList");
+            myText = json;
+
+            json = json.Replace("\\", "");
+            json = json.Substring(1);
+            json = json.Substring(0, json.Length - 1);
+            //json = json.Replace("0001-01-01", "2014-09-20");
+            //json = json.Replace(":null,", ":\"\",");
+
+            //json = "{ etfreturn:" + json + "}";
+            //List<EtfReturns> rootObject = JsonConvert.DeserializeObject<List<EtfReturns>>(json);
+            EtfReturns etfs = JsonConvert.DeserializeObject<EtfReturns>(json);
+
 
             Console.ReadKey();
         }
