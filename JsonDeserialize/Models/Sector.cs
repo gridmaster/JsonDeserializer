@@ -3,7 +3,7 @@ using Newtonsoft.Json;
 
 namespace JsonDeserialize.Models
 {
-    public class Sector
+    public class Sector : BaseTicker
     {
         [JsonProperty(PropertyName = "name")]
         public string Name { get; set; }

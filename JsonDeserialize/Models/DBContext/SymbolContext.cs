@@ -12,6 +12,7 @@ namespace JsonDeserialize.Models
         public DbSet<SymbolDetail> SymbolDetail { get; set; }
         public DbSet<Industry> Industries { get; set; }
         public DbSet<Sector> Sectors { get; set; }
+        public DbSet<Ticker> Tickers { get; set; }
         public DbSet<LogEvent> Logs { get; set; }
     }
 }

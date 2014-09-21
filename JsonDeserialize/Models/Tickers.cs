@@ -2,7 +2,7 @@
 
 namespace JsonDeserialize.Models
 {
-    public class SymbolDetails : List<SymbolDetail>
+    public class Tickers : List<Ticker>
     {
     }
 }

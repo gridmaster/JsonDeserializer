@@ -2,7 +2,7 @@
 
 namespace JsonDeserialize.Models
 {
-    public class Company
+    public class Company : BaseTicker
     {
         [JsonProperty(PropertyName = "name")]
         public string Name { get; set; }

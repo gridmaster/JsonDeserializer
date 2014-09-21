@@ -16,3 +16,64 @@
 09/21/2014 09:12:32: 9/21/2014 9:12:32 AM: Start
 09/21/2014 09:12:45: Error for Uri http://tickersymbol.info/GetETFList.Error: The remote name could not be resolved: 'tickersymbol.info'
 09/21/2014 09:12:57: Error for Uri http://tickersymbol.info/GetETFList.Error: The remote name could not be resolved: 'tickersymbol.info'
+09/21/2014 09:46:21: 9/21/2014 9:46:21 AM: Start
+09/21/2014 10:38:10: 9/21/2014 10:38:10 AM: Start
+09/21/2014 10:38:22: 9/21/2014 10:38:22 AM: Web data pulled
+09/21/2014 10:38:22: 9/21/2014 10:38:22 AM: Symbol Detail loaded
+09/21/2014 11:46:09: JsonDeserialize.Core.LogEvent
+09/21/2014 11:46:14: JsonDeserialize.Core.LogEvent
+09/21/2014 11:46:15: JsonDeserialize.Core.LogEvent
+09/21/2014 11:46:27: JsonDeserialize.Core.LogEvent
+09/21/2014 11:53:00: JsonDeserialize.Core.LogEvent
+09/21/2014 11:53:08: JsonDeserialize.Core.LogEvent
+09/21/2014 11:54:44: JsonDeserialize.Core.LogEvent
+09/21/2014 11:54:52: JsonDeserialize.Core.LogEvent
+09/21/2014 11:55:32: JsonDeserialize.Core.LogEvent
+09/21/2014 11:55:45: JsonDeserialize.Core.LogEvent
+09/21/2014 11:59:14: JsonDeserialize.Core.LogEvent
+09/21/2014 11:59:20: JsonDeserialize.Core.LogEvent
+09/21/2014 12:06:45: JsonDeserialize.Core.LogEvent
+09/21/2014 12:06:47: JsonDeserialize.Core.LogEvent
+09/21/2014 12:08:02: JsonDeserialize.Core.LogEvent
+09/21/2014 12:08:05: JsonDeserialize.Core.LogEvent
+09/21/2014 12:11:33: JsonDeserialize.Core.LogEvent
+09/21/2014 12:11:34: JsonDeserialize.Core.LogEvent
+09/21/2014 12:19:47: JsonDeserialize.Core.LogEvent
+09/21/2014 12:19:47: JsonDeserialize.Core.LogEvent
+09/21/2014 12:19:54: JsonDeserialize.Core.LogEvent
+09/21/2014 12:19:54: JsonDeserialize.Core.LogEvent
+09/21/2014 12:19:54: JsonDeserialize.Core.LogEvent
+09/21/2014 12:22:06: JsonDeserialize.Core.LogEvent
+09/21/2014 12:22:06: JsonDeserialize.Core.LogEvent
+09/21/2014 12:22:13: JsonDeserialize.Core.LogEvent
+09/21/2014 12:22:13: JsonDeserialize.Core.LogEvent
+09/21/2014 12:22:13: JsonDeserialize.Core.LogEvent
+09/21/2014 12:23:23: JsonDeserialize.Core.LogEvent
+09/21/2014 12:26:18: Location: WebService - GetExistingSymbols Done, Description: 3, Timestamp: JsonDeserialize.Core.LogEvent
+09/21/2014 12:27:14: Location: Main, Description: 9/21/2014 12:27:14 PM: Start, Timestamp: 9/21/2014 12:27:14 PM
+09/21/2014 12:27:14: Location: SymbolService - ReturnSectores() for date 9/21/2014 12:27:14 PM, Description:  - do bulk insert, Timestamp: 9/21/2014 12:27:14 PM
+09/21/2014 12:27:21: Location: WebService - GetExistingSymbols foreach, Description: 1, Timestamp: 9/21/2014 12:27:21 PM
+09/21/2014 12:27:21: Location: WebService - GetExistingSymbols AddRange, Description: 2, Timestamp: 9/21/2014 12:27:21 PM
+09/21/2014 12:27:21: Location: WebService - GetExistingSymbols Done, Description: 3, Timestamp: 9/21/2014 12:27:21 PM
+09/21/2014 12:27:47: Location: WebService - GetExistingSymbols AddRange, Description: 2, Timestamp: 9/21/2014 12:27:47 PM
+09/21/2014 12:28:02: Location: WebService - GetExistingSymbols AddRange, Description: 2, Timestamp: 9/21/2014 12:28:02 PM
+09/21/2014 12:28:22: Location: WebService - GetExistingSymbols Done, Description: 3, Timestamp: 9/21/2014 12:28:22 PM
+09/21/2014 12:29:09: Location: Main, Description: 9/21/2014 12:29:09 PM: Start, Timestamp: 9/21/2014 12:29:09 PM
+09/21/2014 12:29:10: Location: SymbolService - ReturnSectores() for date 9/21/2014 12:29:10 PM, Description:  - do bulk insert, Timestamp: 9/21/2014 12:29:10 PM
+09/21/2014 17:48:23: Location: Main, Description: 9/21/2014 5:48:23 PM: Start, Timestamp: 9/21/2014 5:48:23 PM
+09/21/2014 17:48:24: Location: SymbolService - ReturnSectores() for date 9/21/2014 5:48:24 PM, Description:  - do bulk insert, Timestamp: 9/21/2014 5:48:24 PM
+09/21/2014 17:48:55: Location: Main, Description: 9/21/2014 5:48:55 PM: Web data pulled, Timestamp: 9/21/2014 5:48:55 PM
+09/21/2014 17:48:55: Location: Main, Description: 9/21/2014 5:48:55 PM: Symbol Detail loaded, Timestamp: 9/21/2014 5:48:55 PM
+09/21/2014 18:13:31: Location: Main, Description: 9/21/2014 6:13:31 PM: Start, Timestamp: 9/21/2014 6:13:31 PM
+09/21/2014 18:13:32: Location: SymbolService - ReturnSectores() for date 9/21/2014 6:13:32 PM, Description:  - do bulk insert, Timestamp: 9/21/2014 6:13:32 PM
+09/21/2014 18:13:53: Location: Main, Description: 9/21/2014 6:13:53 PM: Web data pulled, Timestamp: 9/21/2014 6:13:53 PM
+09/21/2014 18:13:53: Location: Main, Description: 9/21/2014 6:13:53 PM: Symbol Detail loaded, Timestamp: 9/21/2014 6:13:53 PM
+09/21/2014 18:14:12: Location: BulkLoadTickers, Description: Load Bulk at: 9/21/2014 6:14:12 PM, Timestamp: 9/21/2014 6:14:12 PM
+09/21/2014 18:17:24: Location: BulkLoadSector - BulkCopy, Description: <SymbolDetails> - Bulk load error: SqlDateTime overflow. Must be between 1/1/1753 12:00:00 AM and 12/31/9999 11:59:59 PM., Timestamp: 9/21/2014 6:17:24 PM
+09/21/2014 18:17:26: Location: BulkLoadTickers, Description: Ending at: 9/21/2014 6:17:26 PM, Timestamp: 9/21/2014 6:17:26 PM
+09/21/2014 18:22:09: Location: Main, Description: 9/21/2014 6:22:09 PM: Start, Timestamp: 9/21/2014 6:22:09 PM
+09/21/2014 18:22:10: Location: SymbolService - ReturnSectores() for date 9/21/2014 6:22:10 PM, Description:  - do bulk insert, Timestamp: 9/21/2014 6:22:10 PM
+09/21/2014 18:22:33: Location: Main, Description: 9/21/2014 6:22:33 PM: Web data pulled, Timestamp: 9/21/2014 6:22:33 PM
+09/21/2014 18:22:33: Location: Main, Description: 9/21/2014 6:22:33 PM: Symbol Detail loaded, Timestamp: 9/21/2014 6:22:33 PM
+09/21/2014 18:22:47: Location: BulkLoadTickers, Description: Load Bulk at: 9/21/2014 6:22:47 PM, Timestamp: 9/21/2014 6:22:47 PM
+09/21/2014 18:22:53: Location: BulkLoadTickers, Description: Ending at: 9/21/2014 6:22:53 PM, Timestamp: 9/21/2014 6:22:53 PM

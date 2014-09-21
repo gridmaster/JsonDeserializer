@@ -5,7 +5,7 @@ using Newtonsoft.Json;
 
 namespace JsonDeserialize.Models
 {
-    public class EtfReturn : EtfBase
+    public class EtfReturn : BaseEtf
     {
         public EtfReturn()
         {

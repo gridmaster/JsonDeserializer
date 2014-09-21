@@ -45,7 +45,7 @@ namespace JsonDeserialize.BulkOperations
                 }
                 catch (Exception ex)
                 {
-                    Log.WriteLog(string.Format("BulkLoadSector - BulkCopy<{0}> - Bulk load error: {1}", tableName, ex.Message));
+                    Log.WriteLog(new LogEvent("BulkLoadSector - BulkCopy", string.Format("<{0}> - Bulk load error: {1}", tableName, ex.Message)));
                 }
                 bulkCopy.Close();
             }
