@@ -1,0 +1,18 @@
+09/20/2014 10:22:56: 9/20/2014 10:22:56 AM: Start
+09/20/2014 13:15:00: 9/20/2014 1:15:00 PM: Start
+09/20/2014 13:15:15: 9/20/2014 1:15:15 PM: Web data pulled
+09/20/2014 13:15:15: 9/20/2014 1:15:15 PM: Symbol Detail loaded
+09/20/2014 15:11:01: 9/20/2014 3:11:01 PM: Start
+09/20/2014 15:11:15: 9/20/2014 3:11:15 PM: Web data pulled
+09/20/2014 15:11:15: 9/20/2014 3:11:15 PM: Symbol Detail loaded
+09/20/2014 15:29:31: 9/20/2014 3:29:31 PM: Start
+09/20/2014 15:43:23: 9/20/2014 3:43:23 PM: Start
+09/20/2014 15:53:40: 9/20/2014 3:53:40 PM: Start
+09/20/2014 17:40:02: 9/20/2014 5:40:02 PM: Start
+09/20/2014 17:56:31: 9/20/2014 5:56:31 PM: Start
+09/20/2014 17:59:25: 9/20/2014 5:59:25 PM: Start
+09/20/2014 18:11:47: 9/20/2014 6:11:47 PM: Start
+09/20/2014 18:12:24: 9/20/2014 6:12:24 PM: Start
+09/21/2014 09:12:32: 9/21/2014 9:12:32 AM: Start
+09/21/2014 09:12:45: Error for Uri http://tickersymbol.info/GetETFList.Error: The remote name could not be resolved: 'tickersymbol.info'
+09/21/2014 09:12:57: Error for Uri http://tickersymbol.info/GetETFList.Error: The remote name could not be resolved: 'tickersymbol.info'

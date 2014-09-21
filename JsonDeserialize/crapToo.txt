@@ -1,0 +1,1 @@
+"[{\"EtfName\":\"UBS E-TRACS CMCI Silver TR ETN\",\"Ticker\":\"USV\",\"Category\":\"Commodities Precious Metals\",\"FundFamily\":\"UBS AG\"},{\"EtfName\":\"Huntington US Equity Rotation Strat ETF\",\"Ticker\":\"HUSE\",\"Category\":\"Large Growth\",\"FundFamily\":\"Huntington Strategy Shares\"}]"

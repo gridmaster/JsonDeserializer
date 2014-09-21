@@ -1,0 +1,44 @@
+{
+   "ETFReturns":[
+	{
+		"IntradayReturn":null,
+		"ThreeMoReturn":null,
+		"YTDReturn":null,
+		"OneYrReturn":null,
+		"ThreeYrReturn":null,
+		"FiveYrReturn":null,
+		"Id":0,
+		"Date":"0001-01-01",
+		"EtfName":"UBS E-TRACS CMCI Silver TR ETN",
+		"Ticker":"USV",
+		"Category":"Commodities Precious Metals",
+		"FundFamily":"UBS AG"
+	},
+	{
+		"IntradayReturn":null,
+		"ThreeMoReturn":null,
+		"YTDReturn":null,
+		"OneYrReturn":null,
+		"ThreeYrReturn":null,
+		"FiveYrReturn":null,
+		"Id":0,
+		"Date":"0001-01-01",
+		"EtfName":"Huntington US Equity Rotation Strat ETF",
+		"Ticker":"HUSE",
+		"Category":"Large Growth",
+		"FundFamily":"Huntington Strategy Shares"
+	},
+	{
+		"IntradayReturn":null,
+		"ThreeMoReturn":null,
+		"YTDReturn":null,
+		"OneYrReturn":null,
+		"ThreeYrReturn":null,
+		"FiveYrReturn":null,
+		"Id":0,"Date":"0001-01-01",
+		"EtfName":"iShares MSCI Netherlands",
+		"Ticker":"EWN",
+		"Category":"Miscellaneous Region",
+		"FundFamily":"iShares"
+	}]
+}
