@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using JsonDeserialize.BulkOperations;
 using JsonDeserialize.Core;
 using JsonDeserialize.Models;
@@ -75,7 +76,8 @@ namespace JsonDeserialize
                 {
                     if (!dic.ContainsKey(sd.Symbol))
                     {
-                        dic.Add(sd.Symbol, sd);
+                        SymbolDetail sdet = WebService.GetActiveLinks(sd);
+                        dic.Add(sd.Symbol, sdet);
                     }
                     else
                     {
@@ -88,8 +90,11 @@ namespace JsonDeserialize
                 }
             }
 
+            SymbolDetails bulkSymbols = new SymbolDetails();
+            bulkSymbols.AddRange(dic.Select(entry => entry.Value));
             //now we have a dic full of 101173 symbols...
-            WebService.BulkLoadTickers(dic);
+            WebService.BulkLoadTickers(bulkSymbols);
+            //WebService.BulkLoadTickers(dic);
 
             Console.ReadKey();
         }
